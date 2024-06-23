@@ -43,7 +43,9 @@ optional arguments:
   --nume_clasa NUME_CLASA Clasa java
 ```
 IP - Ip-ul masinii atacate
+
 Port - Portul unde este acultata conexiunea reverse shell (ex:9999)
+
 Nume - Numele dorit pentru clasa java reverse shell generata
 
 * Dupa rulare, va exista un server malitios valabil pentru a injecta clasa java ce initiaza o conexiune reverse shell.
